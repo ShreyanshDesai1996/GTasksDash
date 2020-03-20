@@ -37,11 +37,6 @@ canvas1.grid(row=1,column=0)
 canvas2 = tkinter.Canvas(window, bg="white")
 canvas2.grid(row=1,column=3)
 
-def doSomething():
-    print('doSomething called')
-    global dailyTasks
-    dailyTasks.append({'title':'pushed task'})
-    applytoLabel()
     
 
 def applytoLabel():
@@ -180,7 +175,6 @@ def main():
     #do get tasksk every 1 min (API has limit of 50000 queries per day)
     getTasks()
     printTasks()
-    time.sleep(5)
     global labelText
     l9 = tkinter.Label(canvas1, textvariable=labelText, font= "calibri 14", bg="white", width="36")
     l9.grid(row=0,column=0)
