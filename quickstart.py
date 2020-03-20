@@ -182,7 +182,7 @@ def main():
     printTasks()
     time.sleep(5)
     global labelText
-    l9 = tkinter.Label(canvas1, textvariable=labelText, font= "calibri 14", bg="white", width="34")
+    l9 = tkinter.Label(canvas1, textvariable=labelText, font= "calibri 14", bg="white", width="36")
     l9.grid(row=0,column=0)
     #l9.pack()
     window.mainloop()
