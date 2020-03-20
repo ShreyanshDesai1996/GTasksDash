@@ -32,11 +32,10 @@ h = 500  # height for the Tk root
 x = (ws / 2) - (w / 2)
 y = (hs / 2) - (h / 2)
 
-canvas = tkinter.Canvas(window, bg="white")
-canvas.grid(row=2,column=0)
-canvas_scroll = tkinter.Scrollbar(canvas, orient="vertical", command=canvas.yview)
-canvas_scroll.grid(row=0,column=1, sticky="ns")
-canvas.configure(yscrollcommand=canvas_scroll.set, scrollregion=())
+canvas1 = tkinter.Canvas(window, bg="white", width=30)
+canvas1.grid(row=1,column=0)
+canvas2 = tkinter.Canvas(window, bg="white", width=20)
+canvas2.grid(row=1,column=1)
 
 def doSomething():
     print('doSomething called')
@@ -133,17 +132,17 @@ def populateTasks():
     getTasks()
 
 
-button1 = Button(window, text='Complete All', fg='black', bg='#1976D2', command=completeAllTasks, height=1, width=15) 
+button1 = Button(canvas2, text='Complete All', fg='black', bg='#1976D2', command=completeAllTasks, height=2, width=15) 
 button1.grid(row=1, column=0) 
 
-button2 = Button(window, text='Refresh Tasks', fg='black', bg='#1976D2', command=getTasks, height=1, width=15) 
-button2.grid(row=1, column=1)
+button2 = Button(canvas2, text='Refresh Tasks', fg='black', bg='#1976D2', command=getTasks, height=2, width=15) 
+button2.grid(row=2, column=0)
 
-button3 = Button(window, text='Delete All', fg='black', bg='#1976D2', command=clearTasks, height=1, width=15) 
-button3.grid(row=1, column=2) 
+button3 = Button(canvas2, text='Delete All', fg='black', bg='#1976D2', command=clearTasks, height=2, width=15) 
+button3.grid(row=3, column=0) 
 
-button4 = Button(window, text='Populate Tasks', fg='black', bg='#1976D2', command=populateTasks, height=1, width=15) 
-button4.grid(row=1, column=3) 
+button4 = Button(canvas2, text='Populate Tasks', fg='black', bg='#1976D2', command=populateTasks, height=2, width=15) 
+button4.grid(row=4, column=0) 
 
 
 
@@ -183,7 +182,7 @@ def main():
     printTasks()
     time.sleep(5)
     global labelText
-    l9 = tkinter.Label(canvas, textvariable=labelText, font= "calibri 13", bg="white")
+    l9 = tkinter.Label(canvas1, textvariable=labelText, font= "calibri 13", bg="white")
     l9.grid(row=0,column=0)
     #l9.pack()
     window.mainloop()
