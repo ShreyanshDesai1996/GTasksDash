@@ -32,9 +32,9 @@ h = 500  # height for the Tk root
 x = (ws / 2) - (w / 2)
 y = (hs / 2) - (h / 2)
 
-canvas1 = tkinter.Canvas(window, bg="white", width=300)
+canvas1 = tkinter.Canvas(window, bg="white")
 canvas1.grid(row=1,column=0)
-canvas2 = tkinter.Canvas(window, bg="white", width=200)
+canvas2 = tkinter.Canvas(window, bg="white")
 canvas2.grid(row=1,column=3)
 
 def doSomething():
@@ -182,7 +182,7 @@ def main():
     printTasks()
     time.sleep(5)
     global labelText
-    l9 = tkinter.Label(canvas1, textvariable=labelText, font= "calibri 16", bg="white", width="60")
+    l9 = tkinter.Label(canvas1, textvariable=labelText, font= "calibri 14", bg="white", width="20")
     l9.grid(row=0,column=0)
     #l9.pack()
     window.mainloop()
